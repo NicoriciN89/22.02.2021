@@ -1,0 +1,69 @@
+$flarecolor:darkred;
+$flakelayercolor:#234;
+$flakesixe:10px;
+$flacewhite:white;
+$fallduration:12s;
+
+body {
+
+background-color: whitesmoke;
+    
+
+}
+
+.fuisre {
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+
+    .fuisre-albe {
+
+        background-color: $flacewhite;
+        margin: 2px;
+        top: -20px;
+        border-radius: 100%;
+        position: absolute;
+
+
+        animation: fall $fallduration linear infinite;
+
+
+
+        @keyframes fall {
+            from {
+                top: 0%;
+            }
+
+            to {
+                top: 100%;
+            }
+        }
+
+        @for $n from 1 through 100 {
+            &:nth-child(#{$n}) {
+                left: 1% *random(100);
+                animation-delay: $fallduration *random();
+
+                animation-duration: $fallduration *0.5;
+                $sizek: 0.1 + random();
+
+                width: $flakesixe * $sizek;
+                height: $flakesixe * $sizek;
+            }
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+}

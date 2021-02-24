@@ -1,0 +1,40 @@
+body {
+    background-color: #445;
+
+
+}
+
+.parallax-container {
+
+    border: 1px solid red;
+    overflow: auto;
+    perspective: 100px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    perspective: 100px;
+
+
+    .layre {
+
+       
+        font-size: 100px;
+        color: white;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        @for $n from 1 through 5 {
+            &.layre-#{$n} {
+                border: 2px dotted #123;
+                background-color: #7898;
+                transform: translateZ(-200px * $n) scale(2 * $n);
+                z-index: -1 * $n;
+                margin: 50% 0;
+            }
+        }
+
+    }
+
+}
